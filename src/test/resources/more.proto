@@ -1,0 +1,14 @@
+package stuff;
+
+message MoreMsg {
+    optional string bar = 1;
+}
+
+message Foo {
+    optional string stuff = 1;
+}
+
+enum Stuff {
+    NONE = 1;
+    ONE = 2;
+}

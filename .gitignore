@@ -1,0 +1,5 @@
+.gradle
+build/
+*.i*
+debug.txt
+src/test/java

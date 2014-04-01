@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005 -Dprotobuf.codegen.template.dir=./src/test/tpl -jar build/distributions/protobuf-codegen-0.1-shadow.jar
+java -Dprotobuf.codegen.template.dir=./src/test/tpl -jar build/distributions/protobuf-codegen-0.1-shadow.jar

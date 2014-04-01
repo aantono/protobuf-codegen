@@ -1,0 +1,52 @@
+//package ws.antonov.protobuf.test;
+
+//option java_package = "com.example.tutorial";
+option java_outer_classname = "Sample";
+option java_multiple_files = true;
+
+import "more.proto";
+
+message Msg {
+    optional string foo = 1;
+    optional stuff.MoreMsg blah = 2;
+}
+
+message TestMessage {
+    required int32 id = 1;
+    optional string name = 2;
+}
+
+message AnotherMessage {
+    repeated string names = 1;
+    optional DataPayload data = 2;
+
+    message DataPayload {
+        optional string payload = 1;
+    }
+}
+
+message DataMap {
+    repeated Item data_items = 1 [experimental_map_key="name"];
+}
+
+message Item {
+    required string name = 1;
+    optional string value = 2;
+    optional bytes data = 3;
+    optional bool valid = 4;
+    optional int32 size = 5;
+}
+
+message NestedMap {
+    repeated NestedItem items = 1 [experimental_map_key="name"];
+
+    message NestedItem {
+        required string name = 1;
+        optional string value = 2;
+        optional Bucket bucket = 3;
+
+        message Bucket {
+            optional string id = 1;
+        }
+    }
+}
